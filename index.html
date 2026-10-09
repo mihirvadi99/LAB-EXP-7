@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTML Website Projects</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f6fb;
+      color: #202438;
+      line-height: 1.6;
+    }
+
+    header {
+      background: linear-gradient(135deg, #171b35, #5146d8);
+      color: white;
+      text-align: center;
+      padding: 50px 20px;
+    }
+
+    header h1 {
+      font-size: clamp(28px, 5vw, 42px);
+      margin-bottom: 10px;
+    }
+
+    header p {
+      color: #e0e3ff;
+    }
+
+    .container {
+      width: min(1100px, 92%);
+      margin: 35px auto;
+    }
+
+    .section-title {
+      margin-bottom: 22px;
+      font-size: 27px;
+    }
+
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(
+        auto-fit, minmax(230px, 1fr)
+      );
+      gap: 22px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 5px 20px #20243810;
+      transition: transform 0.25s;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+    }
+
+    .card img {
+      width: 100%;
+      height: 175px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .card-content {
+      padding: 20px;
+    }
+
+    .card h3 {
+      margin-bottom: 8px;
+    }
+
+    .card p {
+      color: #646b7e;
+      font-size: 14px;
+      margin-bottom: 12px;
+    }
+
+    .tag {
+      display: inline-block;
+      background: #eeedff;
+      color: #5146d8;
+      padding: 5px 10px;
+      border-radius: 20px;
+      font-size: 12px;
+      margin-bottom: 15px;
+    }
+
+    button {
+      border: none;
+      border-radius: 8px;
+      padding: 11px 16px;
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: bold;
+      transition: 0.2s;
+    }
+
+    .primary {
+      background: #5146d8;
+      color: white;
+    }
+
+    .primary:hover {
+      background: #3930b5;
+    }
+
+    .outline {
+      background: white;
+      border: 1px solid #d8d9e5;
+      color: #5146d8;
+      width: 100%;
+    }
+
+    .outline:hover {
+      background: #eeedff;
+    }
+
+    .builder {
+      background: white;
+      border-radius: 16px;
+      padding: 28px;
+      box-shadow: 0 5px 20px #20243810;
+      margin-top: 40px;
+    }
+
+    .builder h2 {
+      margin-bottom: 22px;
+    }
+
+    .field {
+      margin-bottom: 22px;
+    }
+
+    .field > label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 9px;
+    }
+
+    .options {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .option {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 10px 13px;
+      border: 1px solid #dddfea;
+      border-radius: 9px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    .option:has(input:checked) {
+      border-color: #5146d8;
+      background: #eeedff;
+      color: #3930b5;
+    }
+
+    input[type="radio"] {
+      accent-color: #5146d8;
+    }
+
+    .create-btn {
+      width: 100%;
+      font-size: 16px;
+      padding: 14px;
+    }
+
+    #result {
+      display: none;
+      margin-top: 20px;
+      padding: 18px;
+      border-radius: 10px;
+      background: #eeedff;
+      overflow-wrap: anywhere;
+    }
+
+    footer {
+      margin-top: 50px;
+      background: #171b35;
+      color: white;
+      text-align: center;
+      padding: 25px;
+    }
+
+    @media (max-width: 500px) {
+      header {
+        padding: 35px 15px;
+      }
+
+      .builder {
+        padding: 20px;
+      }
+
+      .section-title {
+        font-size: 23px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>🚀 HTML Website Projects</h1>
+    <p>Discover your next creative website project!</p>
+  </header>
+
+  <main class="container">
+
+    <h2 class="section-title">✨ 5 Website Ideas</h2>
+
+    <section class="projects">
+
+      <article class="card">
+        <img
+          src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?auto=format&fit=crop&w=700&q=80"
+          alt="Personal portfolio website"
+        >
+        <div class="card-content">
+          <h3>1. Personal Portfolio</h3>
+          <p>Showcase your skills, projects, profile, and contact information.</p>
+          <span class="tag">HTML + CSS + JS</span>
+          <button class="outline"
+            onclick="selectProject('Portfolio')">
+            Get the code
+          </button>
+        </div>
+      </article>
+
+      <article class="card">
+        <img
+          src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=700&q=80"
+          alt="Online shopping"
+        >
+        <div class="card-content">
+          <h3>2. Online Shopping</h3>
+          <p>Create product listings, shopping carts, and a checkout page.</p>
+          <span class="tag">Beginner to intermediate</span>
+          <button class="outline"
+            onclick="selectProject('E-commerce')">
+            Get the code
+          </button>
+        </div>
+      </article>
+
+      <article class="card">
+        <img
+          src="https://images.unsplash.com/photo-1504608524841-42fe6f032b4b?auto=format&fit=crop&w=700&q=80"
+          alt="Weather and clouds"
+        >
+        <div class="card-content">
+          <h3>3. Weather Website</h3>
+          <p>Display city temperatures and weather forecasts.</p>
+          <span class="tag">Weather API</span>
+          <button class="outline"
+            onclick="selectProject('Weather')">
+            Get the code
+          </button>
+        </div>
+      </article>
+
+      <article class="card">
+        <img
+          src="https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=700&q=80"
+          alt="Gaming setup"
+        >
+        <div class="card-content">
+          <h3>4. Gaming Website</h3>
+          <p>Build a gaming homepage with dark colors and cool effects.</p>
+          <span class="tag">Creative design</span>
+          <button class="outline"
+            onclick="selectProject('Gaming')">
+            Get the code
+          </button>
+        </div>
+      </article>
+
+      <article class="card">
+        <img
+          src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=700&q=80"
+          alt="Study planner"
+        >
+        <div class="card-content">
+          <h3>5. Student Study Planner</h3>
+          <p>Organize subjects, tasks, and deadlines in one place.</p>
+          <span class="tag">Useful project</span>
+          <button class="outline"
+            onclick="selectProject('Study Planner')">
+            Get the code
+          </button>
+        </div>
+      </article>
+
+    </section>
+
+    <section class="builder" id="builder">
+      <h2>🎨 Build Your Own Website</h2>
+
+      <form id="websiteForm">
+
+        <div class="field">
+          <label>1. Choose a website</label>
+          <div class="options">
+            <label class="option">
+              <input type="radio" name="project"
+                value="Portfolio" checked>
+              Portfolio
+            </label>
+            <label class="option">
+              <input type="radio" name="project"
+                value="E-commerce">
+              Shopping
+            </label>
+            <label class="option">
+              <input type="radio" name="project"
+                value="Gaming">
+              Gaming
+            </label>
+            <label class="option">
+              <input type="radio" name="project"
+                value="Restaurant">
+              Restaurant
+            </label>
+            <label class="option">
+              <input type="radio" name="project"
+                value="School">
+              School
+            </label>
+            <label class="option">
+              <input type="radio" name="project"
+                value="Login page">
+              Login page
+            </label>
+          </div>
+        </div>
+
+        <div class="field">
+          <label>2. Your coding level</label>
+          <div class="options">
+            <label class="option">
+              <input type="radio" name="level"
+                value="Beginner" checked>
+              Beginner
+            </label>
+            <label class="option">
+              <input type="radio" name="level"
+                value="Intermediate">
+              Intermediate
+            </label>
+            <label class="option">
+              <input type="radio" name="level"
+                value="Advanced">
+              Advanced
+            </label>
+          </div>
+        </div>
+
+        <div class="field">
+          <label>3. Choose a design</label>
+          <div class="options">
+            <label class="option">
+              <input type="radio" name="theme"
+                value="Modern dark" checked>
+              🌙 Modern dark
+            </label>
+            <label class="option">
+              <input type="radio" name="theme"
+                value="Clean white">
+              ☀️ Clean white
+            </label>
+            <label class="option">
+              <input type="radio" name="theme"
+                value="Colorful">
+              🌈 Colorful
+            </label>
+          </div>
+        </div>
+
+        <button class="primary create-btn" type="submit">
+          Create My Website
+        </button>
+
+      </form>
+
+      <div id="result" aria-live="polite">
+        <h3>Your website selection 🎉</h3>
+        <p id="summary"></p>
+        <button class="primary" id="copyBtn"
+          style="margin-top: 14px;">
+          Copy project details
+        </button>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>Made with ❤️ using HTML, CSS & JavaScript</p>
+    <p>Start building something amazing today!</p>
+  </footer>
+
+  <script>
+    function selectProject(project) {
+      const radio = document.querySelector(
+        'input[name="project"][value="' + project + '"]'
+      );
+
+      if (radio) {
+        radio.checked = true;
+        document.getElementById("builder").scrollIntoView({
+          behavior: "smooth"
+        });
+      }
+    }
+
+    let projectDetails = "";
+
+    document.getElementById("websiteForm")
+      .addEventListener("submit", function(event) {
+        event.preventDefault();
+
+        const project =
+          document.querySelector(
+            'input[name="project"]:checked'
+          ).value;
+
+        const level =
+          document.querySelector(
+            'input[name="level"]:checked'
+          ).value;
+
+        const theme =
+          document.querySelector(
+            'input[name="theme"]:checked'
+          ).value;
+
+        projectDetails =
+          "Website: " + project +
+          "\nCoding level: " + level +
+          "\nDesign: " + theme;
+
+        document.getElementById("summary").textContent =
+          projectDetails;
+
+        document.getElementById("result").style.display =
+          "block";
+
+        document.getElementById("result").scrollIntoView({
+          behavior: "smooth",
+          block: "nearest"
+        });
+      });
+
+    document.getElementById("copyBtn")
+      .addEventListener("click", async function() {
+        try {
+          await navigator.clipboard.writeText(projectDetails);
+          this.textContent = "Copied successfully! ✓";
+        } catch (error) {
+          window.prompt("Copy your project details:", projectDetails);
+        }
+      });
+  </script>
+
+</body>
+</html>
